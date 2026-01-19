@@ -1,0 +1,160 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated EKG Background */
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 200%;
+  height: 200px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none"><path d="M0,50 L200,50 L220,20 L240,80 L260,50 L280,50 L300,30 L320,70 L340,50 L1200,50" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="3"/></svg>') repeat-x;
+  animation: ekg-pulse 8s linear infinite;
+  transform: translateY(-50%);
+}
+
+.login-container::after {
+  content: '';
+  position: absolute;
+  top: 60%;
+  left: 0;
+  width: 200%;
+  height: 200px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none"><path d="M0,50 L250,50 L270,10 L290,90 L310,50 L350,50 L370,25 L390,75 L410,50 L1200,50" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/></svg>') repeat-x;
+  animation: ekg-pulse 10s linear infinite;
+  transform: translateY(-50%);
+}
+
+@keyframes ekg-pulse {
+  0% {
+    transform: translateX(0) translateY(-50%);
+  }
+  100% {
+    transform: translateX(-600px) translateY(-50%);
+  }
+}
+
+.login-card {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  z-index: 1;
+  border: 3px solid rgba(14, 165, 233, 0.2);
+}
+
+.login-card h1 {
+  color: #0ea5e9;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 36px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-card h1::after {
+  content: ' ❤️‍🩹';
+}
+
+.login-card h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-card input {
+  padding: 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.login-card input:focus {
+  outline: none;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 10px rgba(14, 165, 233, 0.2);
+}
+
+.btn-primary {
+  padding: 14px;
+  background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-primary:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(14, 165, 233, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(-1px);
+}
+
+.toggle-text {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}
+
+.toggle-link {
+  color: #0ea5e9;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.toggle-link:hover {
+  color: #0284c7;
+  text-decoration: underline;
+}
+
+.forgot-password {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
