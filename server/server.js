@@ -19,9 +19,13 @@ mongoose.connect(process.env.MONGODB_URI)
 
 // Import Routes
 const authRoutes = require('./routes/authRoutes');
+const patientRoutes = require('./routes/patients');
+const handoffRoutes = require('./routes/handoffs');
 
 // Use Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/patients', patientRoutes);
+app.use('/api/handoffs', handoffRoutes);
 
 // Test route
 app.get('/', (req, res) => {
@@ -30,7 +34,6 @@ app.get('/', (req, res) => {
 
 // Port
 const PORT = process.env.PORT || 5000;
-
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
