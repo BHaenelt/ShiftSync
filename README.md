@@ -1,7 +1,7 @@
 ShiftSync
 ShiftSync is a full stack web application built to digitize the nurse shift handoff process. Every 12 hours when nursing staff change shifts, critical patient information gets verbally passed from one nurse to the next using a communication framework called SBAR (Situation, Background, Assessment, Recommendation). That process is error prone. ShiftSync gives nurses a structured, documented, and searchable digital handoff system.
 Built by a pediatric nurse with 10 years of clinical experience who wanted to solve a real problem she lived every day.
-Live App: shift-sync-alpha.vercel.app
+Live App: [shift-sync-alpha.vercel.app](https://shift-sync-alpha.vercel.app)
 
 Tech Stack
 Frontend: React 19, React Router v7, Vite, vanilla CSS
