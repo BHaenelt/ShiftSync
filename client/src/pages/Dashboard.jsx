@@ -15,7 +15,7 @@ function Dashboard() {
 
   const fetchPatients = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/patients');
+     const response = await fetch(`${import.meta.env.VITE_API_URL}/api/patients`);
       const data = await response.json();
       setPatients(data.patients);
       setLoading(false);

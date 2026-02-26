@@ -20,9 +20,9 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    const url = isLogin 
-      ? 'http://localhost:5000/api/auth/login'
-      : 'http://localhost:5000/api/auth/register';
+ const url = isLogin
+  ? `${import.meta.env.VITE_API_URL}/api/auth/login`
+  : `${import.meta.env.VITE_API_URL}/api/auth/register`;
 
     try {
       const response = await fetch(url, {

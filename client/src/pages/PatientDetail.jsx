@@ -16,8 +16,8 @@ function PatientDetail() {
 
   const fetchPatientDetails = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/patients/${id}`);
-      const data = await response.json();
+const response = await fetch(`${import.meta.env.VITE_API_URL}/api/patients/${id}`);      
+const data = await response.json();
       setPatient(data.patient);
       setLoading(false);
     } catch (error) {
@@ -28,8 +28,8 @@ function PatientDetail() {
 
   const fetchPatientHandoffs = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/handoffs/patient/${id}`);
-      const data = await response.json();
+const response = await fetch(`${import.meta.env.VITE_API_URL}/api/patients/${id}`);   
+   const data = await response.json();
       setHandoffs(data.handoffs);
     } catch (error) {
       console.error('Error fetching handoffs:', error);
