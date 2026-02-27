@@ -16,8 +16,8 @@ function PatientDetail() {
 
   const fetchPatientDetails = async () => {
     try {
-const response = await fetch(`${import.meta.env.VITE_API_URL}/api/patients/${id}`);      
-const data = await response.json();
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/patients/${id}`);
+      const data = await response.json();
       setPatient(data.patient);
       setLoading(false);
     } catch (error) {
@@ -28,8 +28,8 @@ const data = await response.json();
 
   const fetchPatientHandoffs = async () => {
     try {
-const response = await fetch(`${import.meta.env.VITE_API_URL}/api/patients/${id}`);   
-   const data = await response.json();
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/handoffs/patient/${id}`);
+      const data = await response.json();
       setHandoffs(data.handoffs);
     } catch (error) {
       console.error('Error fetching handoffs:', error);
@@ -46,7 +46,6 @@ const response = await fetch(`${import.meta.env.VITE_API_URL}/api/patients/${id}
 
   return (
     <div className="patient-detail-container">
-      {/* Header */}
       <div className="detail-header">
         <button className="btn-back" onClick={() => navigate('/dashboard')}>
           ← Back to Dashboard
@@ -54,7 +53,6 @@ const response = await fetch(`${import.meta.env.VITE_API_URL}/api/patients/${id}
         <h1>{patient.firstName} {patient.lastName}</h1>
       </div>
 
-      {/* Patient Info Card */}
       <div className="info-section">
         <div className="info-card">
           <h2>Patient Information</h2>
@@ -79,7 +77,6 @@ const response = await fetch(`${import.meta.env.VITE_API_URL}/api/patients/${id}
             </div>
           </div>
 
-          {/* Allergies */}
           <div className="allergies-section">
             <h3>⚠️ Allergies</h3>
             {patient.allergies && patient.allergies.length > 0 ? (
@@ -95,14 +92,12 @@ const response = await fetch(`${import.meta.env.VITE_API_URL}/api/patients/${id}
         </div>
       </div>
 
-      {/* SBAR Button */}
       <div className="action-section">
         <button className="btn-sbar" onClick={() => navigate(`/handoff/${id}`)}>
           Create SBAR Handoff
         </button>
       </div>
 
-      {/* Handoff History */}
       <div className="handoff-section">
         <h2>Shift Handoff History</h2>
         {handoffs.length === 0 ? (
@@ -120,7 +115,7 @@ const response = await fetch(`${import.meta.env.VITE_API_URL}/api/patients/${id}
                     {new Date(handoff.date).toLocaleDateString()} at {new Date(handoff.date).toLocaleTimeString()}
                   </span>
                 </div>
-                
+
                 <div className="sbar-content">
                   <div className="sbar-section">
                     <strong>S - Situation:</strong>
